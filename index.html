@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIPTEX – Booth Map</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h2 { margin-bottom: 10px; }
+        input, button { margin: 5px; padding: 6px; }
+        table { border-collapse: collapse; margin-top: 15px; width: 100%; max-width: 700px; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .map-container { position: relative; display: inline-block; }
+        .booth-overlay {
+            position: absolute;
+            background-color: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+        .booth-filled {
+            background-color: orange !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exhibition Booth Plan</h2>
+    <div class="map-container">
+        <img src="map.jpg" alt="Booth Map" style="width: 100%; max-width: 1000px;">
+<div class="booth-overlay" id="booth-1" data-booth="1" style="top: 440px; left: 85px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-2" data-booth="2" style="top: 440px; left: 145px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-3" data-booth="3" style="top: 440px; left: 205px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-4" data-booth="4" style="top: 440px; left: 265px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-5" data-booth="5" style="top: 440px; left: 325px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-6" data-booth="6" style="top: 440px; left: 385px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-7" data-booth="7" style="top: 440px; left: 445px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-8" data-booth="8" style="top: 440px; left: 505px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-9" data-booth="9" style="top: 440px; left: 565px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-10" data-booth="10" style="top: 440px; left: 625px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-11" data-booth="11" style="top: 440px; left: 685px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-12" data-booth="12" style="top: 440px; left: 745px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-13" data-booth="13" style="top: 440px; left: 805px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-14" data-booth="14" style="top: 440px; left: 865px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-15" data-booth="15" style="top: 440px; left: 925px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-16" data-booth="16" style="top: 385px; left: 85px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-17" data-booth="17" style="top: 385px; left: 145px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-18" data-booth="18" style="top: 385px; left: 205px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-19" data-booth="19" style="top: 385px; left: 265px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-20" data-booth="20" style="top: 385px; left: 325px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-21" data-booth="21" style="top: 385px; left: 385px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-22" data-booth="22" style="top: 385px; left: 445px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-23" data-booth="23" style="top: 385px; left: 505px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-24" data-booth="24" style="top: 385px; left: 565px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-25" data-booth="25" style="top: 385px; left: 625px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-26" data-booth="26" style="top: 385px; left: 685px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-27" data-booth="27" style="top: 385px; left: 745px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-28" data-booth="28" style="top: 385px; left: 805px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-29" data-booth="29" style="top: 385px; left: 865px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-30" data-booth="30" style="top: 385px; left: 925px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-31" data-booth="31" style="top: 330px; left: 85px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-32" data-booth="32" style="top: 330px; left: 145px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-33" data-booth="33" style="top: 330px; left: 205px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-34" data-booth="34" style="top: 330px; left: 265px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-35" data-booth="35" style="top: 330px; left: 325px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-36" data-booth="36" style="top: 330px; left: 385px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-37" data-booth="37" style="top: 330px; left: 445px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-38" data-booth="38" style="top: 330px; left: 505px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-39" data-booth="39" style="top: 330px; left: 565px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-40" data-booth="40" style="top: 330px; left: 625px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-41" data-booth="41" style="top: 330px; left: 685px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-42" data-booth="42" style="top: 330px; left: 745px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-43" data-booth="43" style="top: 330px; left: 805px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-44" data-booth="44" style="top: 330px; left: 865px; width: 55px; height: 50px;"></div>
+<div class="booth-overlay" id="booth-45" data-booth="45" style="top: 330px; left: 925px; width: 55px; height: 50px;"></div>
+
+    </div>
+
+    <div id="booth-list">
+        <h3>Assign Company to Booth</h3>
+        <form id="assign-form" onsubmit="saveAssignment(event)">
+            <label>Booth No: <input type="number" id="booth-num" min="1" max="45" required></label><br>
+            <label>Company: <input type="text" id="company-name" required></label><br>
+            <button type="submit">Save</button>
+        </form>
+
+        <table>
+            <thead><tr><th>Booth</th><th>Company</th></tr></thead>
+            <tbody id="assignment-table"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const assignments = {};
+        const validBooths = new Set(Array.from({length: 45}, (_, i) => (i+1).toString()));
+
+        document.querySelectorAll('.booth-overlay').forEach(div => {
+            div.addEventListener('click', () => {
+                const boothNum = div.dataset.booth;
+                document.getElementById('booth-num').value = boothNum;
+            });
+        });
+
+        function saveAssignment(e) {
+            e.preventDefault();
+            const booth = document.getElementById('booth-num').value;
+            const company = document.getElementById('company-name').value;
+            if (!validBooths.has(booth) || !company) return;
+
+            assignments[booth] = company;
+            updateTable();
+
+            const boothElement = document.querySelector(`#booth-${booth}`);
+            if (boothElement) {
+                boothElement.classList.add('booth-filled');
+            }
+
+            document.getElementById('assign-form').reset();
+        }
+
+        function updateTable() {
+            const table = document.getElementById('assignment-table');
+            table.innerHTML = '';
+            for (let booth in assignments) {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${booth}</td><td>${assignments[booth]}</td>`;
+                table.appendChild(row);
+            }
+        }
+    </script>
+</body>
+</html>
